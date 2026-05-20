@@ -1,0 +1,91 @@
+
+Analysis Description
+--------------------
+MEME (Mixed Effects Model of Evolution) estimates a site-wise synonymous
+(&alpha;) and a two-category mixture of non-synonymous (&beta;-, with
+proportion p-, and &beta;+ with proportion [1-p-]) rates, and uses a
+likelihood ratio test to determine if &beta;+ > &alpha; at a site. The
+estimates aggregate information over a proportion of branches at a site,
+so the signal is derived from episodic diversification, which is a
+combination of strength of selection [effect size] and the proportion of
+the tree affected. A subset of branches can be selected for testing as
+well, in which case an additional (nuisance) parameter will be inferred
+-- the non-synonymous rate on branches NOT selected for testing.
+Multiple partitions within a NEXUS file are also supported for
+recombination - aware analysis. Version 3.0 adds a different format for
+ancestral state reconstruction, branch-site posterior storage, and
+site-level heterogeneity testing. 
+
+- __Requirements__: in-frame codon alignment and a phylogenetic tree
+
+- __Citation__: Detecting Individual Sites Subject to Episodic Diversifying Selection.
+_PLoS Genet_ 8(7): e1002764.
+
+- __Written by__: Sergei L. Kosakovsky Pond, Steven Weaver
+
+- __Contact Information__: spond@temple.edu
+
+- __Analysis Version__: 3.0
+
+
+>code –> Universal
+*** PROBLEM WITH SEQUENCE ' Damr_ML95' (1455 nt long, stop codons shown in capital letters)
+
+atggaccacataatcgccaaagtatccaaacccgtcaagctggctttcttttcgcacctgacccactggctcttgttcggtgttatagatgatgagcactccgagttcttcatcaactatagatcctcgaatgaaagtggtctgaagaatgccagcgagaaatcgagttcattgagtgaggaagagatatggcagtacgaaatccaatttagtcaattgcccagctttgtgtcatctattttagctgaaaaggtgttatttgtcggtcaaacggttcttgtttttaaattggaccgaagtaaacataaaaatgacacttggatgatgaaaatgcctggatcattctgtgatgatattagtgagctttgggatggcaaagaaggcatgttttgtaaaatgattgaagacttgaatcaggatgataagatcgacatatttcacttggaaagtgtaattaaccaaatcaagaaatacgttagccaacgtctgtcagaaatagcagttatcgaagatgatttggatcgtcaattgtatctgataaaagacttttacctattgggacgcggtgaattttatttggaattctttcgtcaactatatgagaattcagaaaaccttgctgagctaaatgctaaaaactatacaaaagccttcgagattgcagcaaacgtaatgggaatcgttgatgatctggagaatttctcgctaagtgtgcaaaaaactaccatcgatttggaggagagctgcgagtttgccatatttcaaaaccttcatctcaaatacatatataaatggccattgaatctcttgttttcgccaacaacggtggaacgatacaatactgtatttcgtttccttctaactgttcggaagctacaatatgatcttcagcttgtatgggcccgccacaaatgggccgctaaaaccgcaaatccggtgaacctaaagattattaattttcgtaatcatcttatgttctttttggacaacttgcagtattacatacaggtggatgttcttgaatctcagttcagtattctcatgagtgtgattgctagtaaagctgattttgaagaaattcaaagagctcattcagtttttctagccaatgttctttcacaatgtttcctgctgaccgatgaaaccgacaaaaaaataaatcttacccagtcaacacgtcattcccaatatccggtttatggaacaattctagagatcttcagtatttgcgagaaatttagcgtcgtgaattgttcggaagaaacgcccgatgatcatttaaataatgttgatagactcgaagaaagatttaacattgccatatcgggattaattaaattattggttaacattaaaagtgcatccagtttcggtccgctttcgcagttcttattaagattggattttaatcgttggtttagcgtaaagagaactgaaaacgcagcatcaTAA---
+Error:
+The input alignment must have the number of sites that is divisible by 3 and must not contain stop codons in call to assert(meme.codon_filter.sites*3==meme.codon_data.sites, error_msg);
+
+Function call stack
+1 :  assert(meme.codon_filter.sites*3==meme.codon_data.sites, error_msg);
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
+2 :  ExecuteCommands("assert (`statement`, error_msg)", /home/comcmill/miniforge3/envs/SAPA_HyPhy/share/hyphy/TemplateBatchFiles/libv3/);
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
+3 :  io.CheckAssertion("`datafilter_name`.sites*3==`dataset_name`.sites","The input alignment must have the number of sites that is divisible by 3 and must not contain stop codons");
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
+4 :  return alignments.LoadCodonDataFile(dataset_name,datafilter_name,alignments.ReadCodonDataSet(dataset_name));
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
+5 :  [namespace = meme] codon_data_info=alignments.PromptForGeneticCodeAndAlignment(prefix+".codon_data",prefix+".codon_filter");
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
+6 :  [namespace = meme] load_file("meme");
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
+7 :  namespace 
+
+Step 0.LoadFunctionLibrary("modules/shared-load-file.bf", /home/comcmill/miniforge3/envs/SAPA_HyPhy/share/hyphy/TemplateBatchFiles/SelectionAnalyses/);
+
+Step 1.load_file("meme");;
+
+	Keyword arguments:
+		{
+		 "tree":"tmpPruned.tree"
+		}
+-------
