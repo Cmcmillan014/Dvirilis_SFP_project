@@ -1,0 +1,1 @@
+TRANSCRIPT	NS_POLY	S_POLY	NS_FIX	S_FIX	codons	final_NI	alpha	final_FET

@@ -111,3 +111,7 @@ src/snakemake/_version.py
 .pixi
 *.egg-info
 pixi.lock
+
+# exploratory
+*.fasta
+*.fa

@@ -1,0 +1,2 @@
+TRANSCRIPT	NS_POLY	S_POLY	NS_FIX	S_FIX	codons	final_NI	alpha	final_FET
+FBtr0225970.fa	2	10	0	7	503	0.0000	1	0.5088 
